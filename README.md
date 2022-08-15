@@ -44,13 +44,21 @@ An example command line run is:
 The raw model output looks like this:
 
 `1 COST:  46403.161011   vans 36  parcels 500
+
  0 COST:  73101.179230    vans  33  parcs 800
+
  30 COST:  8133.619629   vans 6  parcels 81 
+
  20 COST:  79829.809204    vans  34  parcs 960
+
  15 COST:  35.788727   vans 1  parcels 3 
+
  15 COST:  31.088379   vans 1  parcels 3 
+
  15 COST:  30.667815   vans 1  parcels 3  
+
  15 COST:  64.700380   vans 2  parcels 7  
+
  <etc..>`
 
 The first line (starting with '1') is scenario A, and indicates the cost (and number of vans and parcels) of meeting the parcel demand. 
