@@ -70,17 +70,26 @@ Finally, there will be many lines starting '15', each of which refers to the cos
 
 ### Further Details : What the model does 
 
-The model assumes the following are all in place:
+#### The parcel fleet and parcel demand
 
 A parcel company is defined in the inputs to the model, with the following attrbutes:
 - a defined depot location (lat and lon)
 - a fleet comprising a specific number of vans, each with a given weight capacity, volume capacity, operating cost per mile,  operating cost per hour, an earliest start time, a latest start time, and a maximum shift length
 - a number of parcels to deliver in a particular region, each with a weight, a volume, and its lat and lon delivery co-ordinates. 
 
+#### The bus fleet(s) and passenger demand
+
 There are one or more bus depots in the region, which run demand-responsive transport (DRT) services; these are manifest in the model as follows:
-- each bus depot has a lat and lon, a number of buses available, an earliest start time, latest start time, and  maximum shift length There are a collection of 'lastmile sites' available, where parcels can be dropped off, for collection by the ultimate recipient and/or onward delivery by a localised service.
+- each bus depot has a lat and lon, a number of buses available, an earliest start time, latest start time, and  maximum shift length 
+
+#### Lastmile sites
+There are a collection of 'lastmile sites' available, where parcels can be dropped off, for collection by the ultimate recipient and/or onward delivery by a localised service.
 - the parcel and bus companies have agreed to run a joint system whereby some of the day's parcel demand will be dropped off at a bus depot, and the DRT buses will deliver these to appropriate lastmile sites.
  
+#### The operating protocols: interaction between parcel and bus operations
+
+- the parcel and bus companies have agreed to run a joint system whereby some of the day's parcel demand will be dropped off at a bus depot, and the DRT buses will deliver these to appropriate lastmile sites.
+
  The model compares 'before' and 'after'; that is, it essentially runs three simulations:
  -  A. parcels alone: the parcel van fleet  delivering all of its parcels; 
  -  B. passengers alone: the DRT bus services handling the DRT passenger demand;
