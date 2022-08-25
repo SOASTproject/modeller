@@ -70,6 +70,26 @@ Finally, there will be many lines starting '15', each of which refers to the cos
 
 ### Further Details : What the model does 
 
+The model assumes the following are all in place:
+
+A parcel company is defined in the inputs to the model, with the following attrbutes:
+- a defined depot location (lat and lon)
+- a fleet comprising a specific number of vans, each with a given weight capacity, volume capacity, operating cost per mile,  operating cost per hour, an earliest start time, a latest start time, and a maximum shift length
+- a number of parcels to deliver in a particular region, each with a weight, a volume, and its lat and lon delivery co-ordinates. 
+
+There are one or more bus depots in the region, which run demand-responsive transport (DRT) services; these are manifest in the model as follows:
+- each bus depot has a lat and lon, a number of buses available, an earliest start time, latest start time, and  maximum shift length There are a collection of 'lastmile sites' available, where parcels can be dropped off, for collection by the ultimate recipient and/or onward delivery by a localised service.
+- the parcel and bus companies have agreed to run a joint system whereby some of the day's parcel demand will be dropped off at a bus depot, and the DRT buses will deliver these to appropriate lastmile sites.
+ 
+ The model compares 'before' and 'after'; that is, it essentially runs three simulations:
+ -  A. parcels alone: the parcel van fleet  delivering all of its parcels; 
+ -  B. passengers alone: the DRT bus services handling the DRT passenger demand;
+ -  C. collaboration: the parcel fleet delivers some of its parcels, but offloads the rest to bus depots; the buses deliver these to lastmile sites (in addition to meeting the full DRT passenger demand), and services at the lastmile sites deliver these parcels locally.
+ 
+The model outputs then provide details of each of these scenarios (A, B and C), enabling the user to understand the benefits (or not) of collaboration in the specific context defined by the inputs.  
+
+For example, the combined costs of A and B represent the 'business as usual' scenario,  in which parcel vans deliver parcels, and bus fleets carry passengers, and there is no collaboration.  In contrast, scenario C provides the full details of the collaborating system, including, for example, the costs related to the localised lastmile delivery service(s).  In a typical model run with sensible inputs, the total cost of scenario C will be lower than the combined costs of A and B. The savings arise to the extent that some stretches of the bus journeys in scenario B broadly align with stretches of parcel van journeys in scenario A, especially in the vicinity of the lastmile sites; these coincident journeys can simply be covered by the buses, saving the time and assets of the parcel company.   
+
 ### Further Details : How the model works
 
 ### Further Details : the input files
